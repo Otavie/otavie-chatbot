@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&family=Bad+Script&family=Bebas+Neue&family=Cookie&family=Courgette&family=Explora&family=Italianno&family=Orbitron:wght@400;500;600;700;800;900&family=Oxanium:wght@200;300;400;500;600;700;800&family=Palanquin:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Satisfy&family=Supermercado+One&family=Tangerine:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zen+Kurenaido&display=swap");
+:root {
+  font-family: 'Aclonica', sans-serif;
+  font-family: 'Bad Script', cursive;
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Cookie', cursive;
+  font-family: 'Courgette', cursive;
+  font-family: 'Explora', cursive;
+  font-family: 'Italianno', cursive;
+  --ff-Orbitron: 'Orbitron', sans-serif;
+  --ff-Oxanium: 'Oxanium', cursive;
+  --ff-Palanquin: 'Palanquin', sans-serif;
+  --ff-Poppins: 'Poppins', sans-serif;
+  font-family: 'Quintessential', cursive;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  font-family: 'Satisfy', cursive;
+  font-family: 'Supermercado One', cursive;
+  font-family: 'Tangerine', cursive;
+  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Zen Kurenaido', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  font-size: 100%;
+  background-color: #3267a8;
+  overflow-x: hidden;
+}
+
+*,
+html {
+  --primary: rgb(0, 85, 255);
+}
+
+.chatbot {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 12px;
+}
+
+.chatbot__support {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+  height: 350px;
+  background-color: #EEE;
+  opacity: 0;
+  z-index: -123456;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  -webkit-transform: translateX(calc(100% + 40px));
+          transform: translateX(calc(100% + 40px));
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.chatbot--active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  z-index: 123456;
+  opacity: 1;
+}
+
+.chatbot__button {
+  text-align: right;
+  z-index: 2;
+  margin-top: 10px;
+}
+
+.chatbot__button img {
+  cursor: pointer;
+  height: 45px;
+}
+
+.send__button {
+  padding: 4px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+.chatbot__content--header {
+  margin-left: 10px;
+}
+
+.chatbot__header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary);
+  color: whitesmoke;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+}
+
+.chatbot__header p {
+  font-size: 0.85rem;
+  font-family: var(--ff-Poppins);
+}
+
+.chatbot__header h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: var(--ff-Oxanium);
+}
+
+.chatbot__messages {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-y: scroll;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  padding: 10px;
+  font-family: var(--ff-Poppins);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.messages__item {
+  max-width: 60.6%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.chatbot__footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.chatbot__support {
+  height: 450px;
+  width: 350px;
+  -webkit-box-shadow: 0px 0px 15px black;
+          box-shadow: 0px 0px 15px black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.chatbot__image--header {
+  margin: 0 20px;
+}
+
+.messages__item {
+  margin-top: 10px;
+  max-width: 70%;
+  padding: 8px 12px;
+}
+
+.messages__item--visitor,
+.messages__item--typing {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 7px;
+  color: black;
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  margin-left: 15px;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.messages__item--operator {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: var(--primary);
+  background: rgba(0, 85, 255, 0.65);
+  color: black;
+  padding: 5px 7px;
+  margin-right: 15px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.chatbot__footer {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(0, 85, 255, 0.9);
+}
+
+.chatbot__footer input {
+  width: 100%;
+  margin-right: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  font-family: var(--ff-Poppins);
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.chatbot__button button,
+.chatbot__button button:focus,
+.chatbot__button button:visited {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

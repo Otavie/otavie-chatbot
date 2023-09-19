@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+</head>
+<body>
+    <div class="container">
+        <div class="chatbot">
+            <div class="chatbot__support">
+                <div class="chatbot__header">
+                    <div class="chatbot__image--header">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-5--v1.png" alt="image">
+                    </div> <!-- End of chatbot__image--header -->
+                    <div class="chatbot__content--header">
+                        <p class="chatbot__description--header">Chat with</p>
+                        <h3 class="chatbot__heading--header">Otavie Jr</h3>                        
+                    </div> <!-- End of chatbot__content--header -->
+                </div> <!-- End of chatbot__header -->
+                <div class="chatbot__messages">
+                    <div></div>
+                </div> <!-- End of chatbot__messages -->
+                <div class="chatbot__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbot__send--footer send__button">Send</button>
+                </div> <!-- End of chatbot__footer -->
+            </div> <!-- End of chatbot__support -->
+            <div class="chatbot__button">
+                <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg')}}"></button>
+                <!-- <button><img src="../static/images/chatbox-icon.svg"></button> -->
+                <!-- <button><img src="../static/images/chatbot-4071274_1920-removebg-preview.png"></button> -->
+            </div> <!-- End of chatbot__button -->
+        </div> <!-- End of chatbot -->
+    </div> <!-- End of the Container -->
+    
+    <script>
+        var $SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    <!-- <script src="../static/app.js"></script> -->
+</body>
+</html>
